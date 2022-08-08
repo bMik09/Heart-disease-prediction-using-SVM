@@ -1,0 +1,16 @@
+import networkx as nx
+import matplotlib.pyplot as plt
+
+G = nx.Graph()
+G.add_edges_from([('A', 'B'), ('A', 'K'), ('B', 'K'), ('A', 'C'),
+				('B', 'C'), ('C', 'F'), ('F', 'G'), ('C', 'E'),
+				('E', 'F'), ('E', 'D'), ('E', 'H'), ('H', 'I'), ('I', 'J')])
+
+plt.figure(figsize =(9, 9))
+nx.draw_networkx(G, with_labels = True, node_color ='green')
+
+print("Eccentricity: ", nx.eccentricity(G))
+print("Diameter: ", nx.diameter(G))
+print("Radius: ", nx.radius(G))
+print("Preiphery: ", list(nx.periphery(G)))
+print("Center: ", list(nx.center(G)))
